@@ -240,6 +240,11 @@ const App: React.FC = () => {
 
             <Section title="Publications">
               <ul>
+                {data.publications.map((p, i) => (<li key={i}>{p}</li>))}
+              </ul>
+            </Section>
+            <Section title="Publications">
+              <ul>
                 {data.publications.map((p, i) => (<li key={i}>{p.text}{" "}{p.link && (<a href={p.link} target="_blank" rel="noreferrer">[DOI]</a>)}</li>))}
               </ul>
             </Section>
