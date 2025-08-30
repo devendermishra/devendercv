@@ -15,6 +15,11 @@ type Education = {
   year: string
 }
 
+type Publication = {
+  text: string
+  link?: string
+}
+
 type ResumeData = {
   name: string
   title: string
@@ -28,6 +33,7 @@ type ResumeData = {
   education: Education[]
   awards: string[]
   interests: string[]
+  publications: Publication[]
 }
 
 /** ==== UI Atoms ==== */
@@ -151,6 +157,12 @@ const App: React.FC = () => {
       { degree: '12th Standard (Physics, Chemistry, Mathematics)', school: 'Kendriya Vidyalaya No. 3, Jalandhar Cantt (CBSE)', year: '2007 (88.0%)' },
       { degree: '10th Standard', school: 'Kendriya Vidyalaya No. 3, Jalandhar Cantt (CBSE)', year: '2005 (84.2%)' },
     ],
+    publications: [
+      {
+        text: 'MST-Based Cluster Initialization for K-Means – Co-authored with D. Reddy and Prof. P.K. Jana. Published in Advances in Computer Science and Information Technology (CCSIT 2011), Springer CCIS, Vol. 131, 2011.',
+        link: 'https://doi.org/10.1007/978-3-642-17857-3_33'
+      }
+    ],
     awards: ['TCS Best Student Award (2011)', 'ACM‑ICPC Regional Prelims Qualifier (2008)'],
     interests: ['Personal finance & fundamental stock analysis', 'Rubik’s Cube (3×3×3)', 'Stack Overflow contributor'],
   }), [])
@@ -224,6 +236,17 @@ const App: React.FC = () => {
                   </div>
                 ))}
               </div>
+            </Section>
+
+            <Section title="Publications">
+              <ul>
+                {data.publications.map((p, i) => (<li key={i}>{p}</li>))}
+              </ul>
+            </Section>
+            <Section title="Publications">
+              <ul>
+                {data.publications.map((p, i) => (<li key={i}>{p.text}{" "}{p.link && (<a href={p.link} target="_blank" rel="noreferrer">[DOI]</a>)}</li>))}
+              </ul>
             </Section>
 
             <Section title="Awards">
