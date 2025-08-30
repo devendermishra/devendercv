@@ -1,32 +1,26 @@
-# Resume Website (TypeScript + React + Vite + Pico.css)
+# Devender Mishra - Resume
 
-## Local Dev
+A modern, responsive resume website built with React, TypeScript, and Vite.
+
+## Features
+
+- Clean, professional design using Pico CSS
+- Responsive layout that works on all devices
+- Print-friendly styling
+- Fast loading with Vite
+- TypeScript for type safety
+
+## Development
+
 ```bash
 npm install
 npm run dev
-```
-
-## Build
-```bash
 npm run build
 npm run preview
 ```
 
-## Deploy to GitHub Pages
-1) Create a **public GitHub repo** and push this project:
-```bash
-git init
-git add .
-git commit -m "Initial commit (TS + Pico.css)"
-git branch -M main
-git remote add origin https://github.com/<YOUR_USERNAME>/<YOUR_REPO>.git
-git push -u origin main
-```
+## Deployment
 
-2) In GitHub: **Settings → Pages → Source: GitHub Actions**.
-   The workflow `.github/workflows/gh-pages.yml` builds & deploys on each push to `main`.
+This site is automatically deployed to GitHub Pages via GitHub Actions.
 
-Notes:
-- If your repo name is `<USERNAME>.github.io`, site URL is `https://<USERNAME>.github.io/`.
-- Else (e.g., `resume`), URL is `https://<USERNAME>.github.io/<REPO>/`. The workflow auto-sets Vite `base`.
-- `404.html` is included for SPA fallback.
+<!-- Updated for deployment testing -->
