@@ -19,8 +19,12 @@ jobs:
         with:
           node-version: 20
           cache: npm
-      - run: npm ci
+      - run: npm install
       - run: npm run build
+      - name: Debug - List dist contents
+        run: ls -la dist/
+      - name: Debug - Show built HTML
+        run: cat dist/index.html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
